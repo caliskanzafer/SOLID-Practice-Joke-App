@@ -17,10 +17,13 @@ class HomeViewController: UIViewController {
     
     let viewModel = HomeViewModel()
     
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         configureTableView()
+        
         
         viewModel.delegate = self
         reloadAllData()
@@ -38,6 +41,7 @@ private extension HomeViewController {
     }
     
     func reloadAllData() {
+        
         viewModel.getRemoteJoke()
         viewModel.getFavoriteJoke()
     }

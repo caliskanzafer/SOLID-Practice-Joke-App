@@ -78,6 +78,5 @@ final class CoreDataService {
                 
             }
         }
-        
     }
 }

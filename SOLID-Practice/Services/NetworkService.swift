@@ -7,17 +7,13 @@
 
 import Foundation
 
-enum NetworkError: Error {
-    case invalidUrl
-    case invalidResponse
-    case unexpectedError(_ message: String)
-}
-
 final class NetworkService {
     private let urlSession = URLSession(configuration: .default)
     
+    let url = URL(string: "https://api.chucknorris.io/jokes/random")
+    
     func getJoke(completion: @escaping (Result<JokeModel, NetworkError>) -> Void) {
-        guard let url = URL(string: "https://api.chucknorris.io/jokes/random") else {
+        guard let url else {
             completion(.failure(.invalidUrl))
             return
         }

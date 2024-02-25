@@ -27,6 +27,9 @@
 		F03EA6B52B8AA70400A6DC4C /* JokeEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = F03EA6B32B8AA70400A6DC4C /* JokeEntity+CoreDataProperties.swift */; };
 		F03EA6B92B8AA87E00A6DC4C /* CoreDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F03EA6B82B8AA87E00A6DC4C /* CoreDataService.swift */; };
 		F03EA6BB2B8AB49A00A6DC4C /* Array+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = F03EA6BA2B8AB49A00A6DC4C /* Array+Ext.swift */; };
+		F03EA6BE2B8B5ED500A6DC4C /* HomeCellType.swift in Sources */ = {isa = PBXBuildFile; fileRef = F03EA6BD2B8B5ED500A6DC4C /* HomeCellType.swift */; };
+		F03EA6C12B8B6DFE00A6DC4C /* HomeCellProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F03EA6C02B8B6DFE00A6DC4C /* HomeCellProtocol.swift */; };
+		F03EA6C32B8B6E6000A6DC4C /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = F03EA6C22B8B6E6000A6DC4C /* NetworkError.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +55,9 @@
 		F03EA6B32B8AA70400A6DC4C /* JokeEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "JokeEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		F03EA6B82B8AA87E00A6DC4C /* CoreDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataService.swift; sourceTree = "<group>"; };
 		F03EA6BA2B8AB49A00A6DC4C /* Array+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Ext.swift"; sourceTree = "<group>"; };
+		F03EA6BD2B8B5ED500A6DC4C /* HomeCellType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCellType.swift; sourceTree = "<group>"; };
+		F03EA6C02B8B6DFE00A6DC4C /* HomeCellProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCellProtocol.swift; sourceTree = "<group>"; };
+		F03EA6C22B8B6E6000A6DC4C /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,20 +90,20 @@
 		F03EA6732B8A904E00A6DC4C /* SOLID-Practice */ = {
 			isa = PBXGroup;
 			children = (
-				F03EA6B62B8AA70800A6DC4C /* CoreDataItems */,
-				F03EA6AB2B8AA07C00A6DC4C /* Extensions */,
 				F03EA69F2B8A9FA700A6DC4C /* Components */,
+				F03EA6B62B8AA70800A6DC4C /* CoreDataItems */,
+				F03EA6BC2B8B5ECE00A6DC4C /* Enums */,
+				F03EA6AB2B8AA07C00A6DC4C /* Extensions */,
 				F03EA6932B8A95DD00A6DC4C /* Models */,
-				F03EA6902B8A924A00A6DC4C /* Services */,
-				F03EA68D2B8A906E00A6DC4C /* Managers */,
-				F03EA68C2B8A906800A6DC4C /* Helpers */,
+				F03EA6BF2B8B6DED00A6DC4C /* Protocols */,
 				F03EA68B2B8A905D00A6DC4C /* Screens */,
-				F03EA6742B8A904E00A6DC4C /* AppDelegate.swift */,
+				F03EA6902B8A924A00A6DC4C /* Services */,
 				F03EA6762B8A904E00A6DC4C /* SceneDelegate.swift */,
-				F03EA6802B8A904F00A6DC4C /* Assets.xcassets */,
+				F03EA67D2B8A904E00A6DC4C /* SOLID_Practice.xcdatamodeld */,
 				F03EA6822B8A904F00A6DC4C /* LaunchScreen.storyboard */,
 				F03EA6852B8A904F00A6DC4C /* Info.plist */,
-				F03EA67D2B8A904E00A6DC4C /* SOLID_Practice.xcdatamodeld */,
+				F03EA6802B8A904F00A6DC4C /* Assets.xcassets */,
+				F03EA6742B8A904E00A6DC4C /* AppDelegate.swift */,
 			);
 			path = "SOLID-Practice";
 			sourceTree = "<group>";
@@ -105,24 +111,9 @@
 		F03EA68B2B8A905D00A6DC4C /* Screens */ = {
 			isa = PBXGroup;
 			children = (
-				F03EA68F2B8A907800A6DC4C /* Detail */,
 				F03EA68E2B8A907400A6DC4C /* Home */,
 			);
 			path = Screens;
-			sourceTree = "<group>";
-		};
-		F03EA68C2B8A906800A6DC4C /* Helpers */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Helpers;
-			sourceTree = "<group>";
-		};
-		F03EA68D2B8A906E00A6DC4C /* Managers */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Managers;
 			sourceTree = "<group>";
 		};
 		F03EA68E2B8A907400A6DC4C /* Home */ = {
@@ -132,13 +123,6 @@
 				F03EA6962B8A967400A6DC4C /* View */,
 			);
 			path = Home;
-			sourceTree = "<group>";
-		};
-		F03EA68F2B8A907800A6DC4C /* Detail */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Detail;
 			sourceTree = "<group>";
 		};
 		F03EA6902B8A924A00A6DC4C /* Services */ = {
@@ -237,6 +221,23 @@
 			path = JokeEntity;
 			sourceTree = "<group>";
 		};
+		F03EA6BC2B8B5ECE00A6DC4C /* Enums */ = {
+			isa = PBXGroup;
+			children = (
+				F03EA6BD2B8B5ED500A6DC4C /* HomeCellType.swift */,
+				F03EA6C22B8B6E6000A6DC4C /* NetworkError.swift */,
+			);
+			path = Enums;
+			sourceTree = "<group>";
+		};
+		F03EA6BF2B8B6DED00A6DC4C /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				F03EA6C02B8B6DFE00A6DC4C /* HomeCellProtocol.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -312,17 +313,20 @@
 			files = (
 				F03EA6B92B8AA87E00A6DC4C /* CoreDataService.swift in Sources */,
 				F03EA6AF2B8AA09900A6DC4C /* UITableView+Ext.swift in Sources */,
+				F03EA6C12B8B6DFE00A6DC4C /* HomeCellProtocol.swift in Sources */,
 				F03EA6AD2B8AA08A00A6DC4C /* UIResponder+Ext.swift in Sources */,
 				F03EA6922B8A925500A6DC4C /* NetworkService.swift in Sources */,
 				F03EA6A92B8A9FF100A6DC4C /* FavoriteJokeTableViewCell.swift in Sources */,
 				F03EA67F2B8A904E00A6DC4C /* SOLID_Practice.xcdatamodeld in Sources */,
 				F03EA6992B8A968F00A6DC4C /* HomeViewModel.swift in Sources */,
 				F03EA6952B8A95E400A6DC4C /* JokeModel.swift in Sources */,
+				F03EA6BE2B8B5ED500A6DC4C /* HomeCellType.swift in Sources */,
 				F03EA6752B8A904E00A6DC4C /* AppDelegate.swift in Sources */,
 				F03EA69D2B8A9DA800A6DC4C /* HomeViewController.swift in Sources */,
 				F03EA6B42B8AA70400A6DC4C /* JokeEntity+CoreDataClass.swift in Sources */,
 				F03EA6A32B8A9FD200A6DC4C /* SimpleJokeTableViewCell.swift in Sources */,
 				F03EA6BB2B8AB49A00A6DC4C /* Array+Ext.swift in Sources */,
+				F03EA6C32B8B6E6000A6DC4C /* NetworkError.swift in Sources */,
 				F03EA6772B8A904E00A6DC4C /* SceneDelegate.swift in Sources */,
 				F03EA6B52B8AA70400A6DC4C /* JokeEntity+CoreDataProperties.swift in Sources */,
 			);

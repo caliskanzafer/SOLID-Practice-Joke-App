@@ -7,7 +7,7 @@
 
 import UIKit
 
-class SimpleJokeTableViewCell: UITableViewCell {
+class SimpleJokeTableViewCell: UITableViewCell, HomeCellProtocol {
 
     @IBOutlet weak var titleLabel: UILabel!
     
@@ -32,7 +32,7 @@ class SimpleJokeTableViewCell: UITableViewCell {
         }
     }
     
-    private var isExist: Bool = false {
+    var isExist: Bool = false {
         didSet {
             if isExist {
                 favButton.setTitle("Fav Çıkar", for: .normal)
