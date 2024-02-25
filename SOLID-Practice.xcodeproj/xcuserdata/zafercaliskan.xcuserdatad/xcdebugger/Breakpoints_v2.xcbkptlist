@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "CB5A51C7-6E99-4DA3-A033-0715FDAFF580"
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "982DBEBC-6831-4D55-92DB-4DD581C2C3CA"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SOLID-Practice/Components/TableViewCell/FavoriteJokeTableViewCell/FavoriteJokeTableViewCell.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "57"
+            endingLineNumber = "57"
+            landmarkName = "favButtonPressed(_:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "982DBEBC-6831-4D55-92DB-4DD581C2C3CA - 6c619302dabeb382"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "SOLID_Practice.FavoriteJokeTableViewCell.favButtonPressed(Any) -&gt; ()"
+                  moduleName = "SOLID-Practice"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/zafercaliskan/Documents/personel%20projects/SOLID-Practice/SOLID-Practice/Components/TableViewCell/FavoriteJokeTableViewCell/FavoriteJokeTableViewCell.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "58"
+                  endingLineNumber = "58"
+                  offsetFromSymbolStart = "280">
+               </Location>
+               <Location
+                  uuid = "982DBEBC-6831-4D55-92DB-4DD581C2C3CA - 6c619302dabeb3e3"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "SOLID_Practice.FavoriteJokeTableViewCell.favButtonPressed(Any) -&gt; ()"
+                  moduleName = "SOLID-Practice"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/zafercaliskan/Documents/personel%20projects/SOLID-Practice/SOLID-Practice/Components/TableViewCell/FavoriteJokeTableViewCell/FavoriteJokeTableViewCell.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "59"
+                  endingLineNumber = "59"
+                  offsetFromSymbolStart = "228">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>
