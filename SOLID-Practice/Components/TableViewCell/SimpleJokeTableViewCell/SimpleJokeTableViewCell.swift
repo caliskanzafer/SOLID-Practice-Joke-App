@@ -7,16 +7,19 @@
 
 import UIKit
 
+protocol HomeCellDelegate: AnyObject {
+    func updateTableView()
+    func updateJoke()
+}
+
 class SimpleJokeTableViewCell: UITableViewCell, HomeCellProtocol {
 
     @IBOutlet weak var titleLabel: UILabel!
-    
     @IBOutlet weak var favButton: UIButton!
     
-    var coreDataService = CoreDataService()
+    weak var homeDelegate: HomeCellDelegate?
     
-    var updateTableView: (() -> Void)?
-    var updateJoke: (() -> Void)?
+    var coreDataService = CoreDataService()
     
     var joke: JokeModel? {
         didSet {
@@ -61,12 +64,12 @@ class SimpleJokeTableViewCell: UITableViewCell, HomeCellProtocol {
                 coreDataService.saveFavoriteJoke(item: joke)
             }
             
-            updateTableView?()
+            homeDelegate?.updateTableView()
         }
     }
     
     @IBAction func newJokePressed(_ sender: Any) {
-        updateJoke?()
+        homeDelegate?.updateJoke()
     }
     
 }

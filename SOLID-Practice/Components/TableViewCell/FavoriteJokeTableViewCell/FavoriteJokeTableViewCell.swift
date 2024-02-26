@@ -14,8 +14,7 @@ class FavoriteJokeTableViewCell: UITableViewCell, HomeCellProtocol {
     
     var coreDataService = CoreDataService()
     
-    var updateTableView: (() -> Void)?
-    var updateJoke: (() -> Void)?
+    weak var homeDelegate: HomeCellDelegate?
     
     var joke: JokeModel? {
         didSet {
@@ -59,7 +58,7 @@ class FavoriteJokeTableViewCell: UITableViewCell, HomeCellProtocol {
             }else {
                 coreDataService.saveFavoriteJoke(item: joke)
             }
-            updateTableView?()
+            homeDelegate?.updateTableView()
         }
     }
 }

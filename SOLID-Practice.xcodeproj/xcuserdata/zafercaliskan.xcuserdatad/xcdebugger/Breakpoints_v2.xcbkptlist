@@ -14,13 +14,13 @@
             filePath = "SOLID-Practice/Components/TableViewCell/FavoriteJokeTableViewCell/FavoriteJokeTableViewCell.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "58"
-            endingLineNumber = "58"
+            startingLineNumber = "57"
+            endingLineNumber = "57"
             landmarkName = "favButtonPressed(_:)"
             landmarkType = "7">
             <Locations>
                <Location
-                  uuid = "982DBEBC-6831-4D55-92DB-4DD581C2C3CA - 6c619302dabeb382"
+                  uuid = "982DBEBC-6831-4D55-92DB-4DD581C2C3CA - 6c619302dabeb3a1"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -30,12 +30,12 @@
                   urlString = "file:///Users/zafercaliskan/Documents/personel%20projects/SOLID-Practice/SOLID-Practice/Components/TableViewCell/FavoriteJokeTableViewCell/FavoriteJokeTableViewCell.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "58"
-                  endingLineNumber = "58"
-                  offsetFromSymbolStart = "280">
+                  startingLineNumber = "57"
+                  endingLineNumber = "57"
+                  offsetFromSymbolStart = "212">
                </Location>
                <Location
-                  uuid = "982DBEBC-6831-4D55-92DB-4DD581C2C3CA - 6c619302dabeb3e3"
+                  uuid = "982DBEBC-6831-4D55-92DB-4DD581C2C3CA - 6c619302dabeb3a1"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -45,9 +45,9 @@
                   urlString = "file:///Users/zafercaliskan/Documents/personel%20projects/SOLID-Practice/SOLID-Practice/Components/TableViewCell/FavoriteJokeTableViewCell/FavoriteJokeTableViewCell.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "59"
-                  endingLineNumber = "59"
-                  offsetFromSymbolStart = "228">
+                  startingLineNumber = "57"
+                  endingLineNumber = "57"
+                  offsetFromSymbolStart = "248">
                </Location>
             </Locations>
          </BreakpointContent>

@@ -30,6 +30,10 @@
 		F03EA6BE2B8B5ED500A6DC4C /* HomeCellType.swift in Sources */ = {isa = PBXBuildFile; fileRef = F03EA6BD2B8B5ED500A6DC4C /* HomeCellType.swift */; };
 		F03EA6C12B8B6DFE00A6DC4C /* HomeCellProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F03EA6C02B8B6DFE00A6DC4C /* HomeCellProtocol.swift */; };
 		F03EA6C32B8B6E6000A6DC4C /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = F03EA6C22B8B6E6000A6DC4C /* NetworkError.swift */; };
+		F03EA6C62B8B71A600A6DC4C /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F03EA6C52B8B71A600A6DC4C /* TabBarController.swift */; };
+		F03EA6CC2B8B71EB00A6DC4C /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F03EA6CA2B8B71EB00A6DC4C /* SettingsViewController.swift */; };
+		F03EA6CD2B8B71EB00A6DC4C /* SettingsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F03EA6CB2B8B71EB00A6DC4C /* SettingsViewController.xib */; };
+		F03EA6CF2B8B730800A6DC4C /* SettingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F03EA6CE2B8B730800A6DC4C /* SettingViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -58,6 +62,10 @@
 		F03EA6BD2B8B5ED500A6DC4C /* HomeCellType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCellType.swift; sourceTree = "<group>"; };
 		F03EA6C02B8B6DFE00A6DC4C /* HomeCellProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCellProtocol.swift; sourceTree = "<group>"; };
 		F03EA6C22B8B6E6000A6DC4C /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
+		F03EA6C52B8B71A600A6DC4C /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		F03EA6CA2B8B71EB00A6DC4C /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		F03EA6CB2B8B71EB00A6DC4C /* SettingsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingsViewController.xib; sourceTree = "<group>"; };
+		F03EA6CE2B8B730800A6DC4C /* SettingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +119,8 @@
 		F03EA68B2B8A905D00A6DC4C /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				F03EA6C72B8B71CA00A6DC4C /* Settings */,
+				F03EA6C42B8B717B00A6DC4C /* TabBar */,
 				F03EA68E2B8A907400A6DC4C /* Home */,
 			);
 			path = Screens;
@@ -238,6 +248,40 @@
 			path = Protocols;
 			sourceTree = "<group>";
 		};
+		F03EA6C42B8B717B00A6DC4C /* TabBar */ = {
+			isa = PBXGroup;
+			children = (
+				F03EA6C52B8B71A600A6DC4C /* TabBarController.swift */,
+			);
+			path = TabBar;
+			sourceTree = "<group>";
+		};
+		F03EA6C72B8B71CA00A6DC4C /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				F03EA6C92B8B71D400A6DC4C /* ViewModel */,
+				F03EA6C82B8B71D000A6DC4C /* View */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		F03EA6C82B8B71D000A6DC4C /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F03EA6CA2B8B71EB00A6DC4C /* SettingsViewController.swift */,
+				F03EA6CB2B8B71EB00A6DC4C /* SettingsViewController.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		F03EA6C92B8B71D400A6DC4C /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				F03EA6CE2B8B730800A6DC4C /* SettingViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -297,6 +341,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F03EA6842B8A904F00A6DC4C /* LaunchScreen.storyboard in Resources */,
+				F03EA6CD2B8B71EB00A6DC4C /* SettingsViewController.xib in Resources */,
 				F03EA6812B8A904F00A6DC4C /* Assets.xcassets in Resources */,
 				F03EA6AA2B8A9FF100A6DC4C /* FavoriteJokeTableViewCell.xib in Resources */,
 				F03EA6A42B8A9FD200A6DC4C /* SimpleJokeTableViewCell.xib in Resources */,
@@ -312,8 +357,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				F03EA6B92B8AA87E00A6DC4C /* CoreDataService.swift in Sources */,
+				F03EA6CF2B8B730800A6DC4C /* SettingViewModel.swift in Sources */,
 				F03EA6AF2B8AA09900A6DC4C /* UITableView+Ext.swift in Sources */,
 				F03EA6C12B8B6DFE00A6DC4C /* HomeCellProtocol.swift in Sources */,
+				F03EA6CC2B8B71EB00A6DC4C /* SettingsViewController.swift in Sources */,
 				F03EA6AD2B8AA08A00A6DC4C /* UIResponder+Ext.swift in Sources */,
 				F03EA6922B8A925500A6DC4C /* NetworkService.swift in Sources */,
 				F03EA6A92B8A9FF100A6DC4C /* FavoriteJokeTableViewCell.swift in Sources */,
@@ -321,6 +368,7 @@
 				F03EA6992B8A968F00A6DC4C /* HomeViewModel.swift in Sources */,
 				F03EA6952B8A95E400A6DC4C /* JokeModel.swift in Sources */,
 				F03EA6BE2B8B5ED500A6DC4C /* HomeCellType.swift in Sources */,
+				F03EA6C62B8B71A600A6DC4C /* TabBarController.swift in Sources */,
 				F03EA6752B8A904E00A6DC4C /* AppDelegate.swift in Sources */,
 				F03EA69D2B8A9DA800A6DC4C /* HomeViewController.swift in Sources */,
 				F03EA6B42B8AA70400A6DC4C /* JokeEntity+CoreDataClass.swift in Sources */,

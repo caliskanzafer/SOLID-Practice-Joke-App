@@ -11,6 +11,4 @@ protocol HomeCellProtocol {
     
     var joke: JokeModel? { get }
     var isExist: Bool { get set }
-    var updateTableView: (() -> Void)? { get set }
-    var updateJoke: (() -> Void)? { get set }
 }
