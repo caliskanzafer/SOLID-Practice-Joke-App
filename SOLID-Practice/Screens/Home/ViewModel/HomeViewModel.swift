@@ -8,6 +8,8 @@
 import Foundation
 
 final class HomeViewModel: HomeViewModelProtocol {
+    
+    
     let repository: HomeRepositoryProtocol
     let service: HomeServiceProtocol
     
@@ -18,9 +20,9 @@ final class HomeViewModel: HomeViewModelProtocol {
     
     weak var delegate: HomeViewControllerDelegate?
     
-    var jokes: [HomeCellType] = [] {
+    var cellList: [HomeCellItem] = [] {
         didSet {
-            jokes.sort(by: { s1, s2 in
+            cellList.sort(by: { s1, s2 in
                 s1.orderIndex < s2.orderIndex
             })
         }
@@ -30,13 +32,15 @@ final class HomeViewModel: HomeViewModelProtocol {
         service.getRemoteJoke { [weak self] response in
             switch response {
             case .success(let joke):
-                self?.jokes.removeAll(where: { cell in
-                    cell == .remote()
-                })
+                guard let self = self else { return }
                 
-                self?.jokes.append(.remote(joke))
+                self.cellList.removeAll { cell in
+                    type(of: cell) == SimpleJokeCell.self
+                }
                 
-                self?.delegate?.reloadTableView()
+                self.cellList.append(SimpleJokeCell(viewModel: self, joke: joke))
+                
+                self.delegate?.reloadTableView()
             case .failure(let error):
                 print(error.localizedDescription)
             }
@@ -46,11 +50,11 @@ final class HomeViewModel: HomeViewModelProtocol {
     func getFavoriteJoke() {
         let jokeList = repository.getFavoriteJoke()
         
-        jokes.removeAll(where: { cell in
-            cell == .favorite()
-        })
+        self.cellList.removeAll { cell in
+            type(of: cell) == FavoriteJokeCell.self
+        }
         
-        jokes.append(.favorite(jokeList))
+        self.cellList.append(FavoriteJokeCell(viewModel: self, jokes: jokeList))
         
         delegate?.reloadTableView()
     }

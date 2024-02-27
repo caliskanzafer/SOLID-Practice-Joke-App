@@ -56,61 +56,22 @@ private extension HomeViewController {
 extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        2
+        viewModel.cellList.count
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if section == 0 {
-            return 1
-        }else if section == 1 {
-            switch viewModel.jokes[safe: 1] {
-            case .favorite(let jokes):
-                return jokes?.count ?? 0
-            default:
-                return 0
-            }
-        }
-        return 0
+        let cellItem = viewModel.cellList[section]
+        return cellItem.numberOfRowsInSection
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cellType = viewModel.jokes[indexPath.section]
-        
-        switch cellType {
-        case .remote(let joke):
-            let cell = tableView.dequeueReusableCell(withIdentifier: SimpleJokeTableViewCell.identifier) as! SimpleJokeTableViewCell
-            cell.delegate = self
-            cell.joke = joke
-            return cell
-        case .favorite(let jokes):
-            let cell = tableView.dequeueReusableCell(withIdentifier: FavoriteJokeTableViewCell.identifier) as! FavoriteJokeTableViewCell
-            cell.delegate = self
-            let joke = jokes?[safe: indexPath.row]
-            cell.joke = joke
-            return cell
-        }
-    }
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
-        switch viewModel.jokes[safe: indexPath.section] {
-        case .remote(let joke):
-            if let joke {
-                viewModel.saveJoke(item: joke)
-            }
-        default:
-            print("")
-        }
+        let cellItem = viewModel.cellList[indexPath.section]
+        return cellItem.cellForRowAt(tableView, indexPath)
     }
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        if section == 0 {
-            return "Şaka"
-        }else if section == 1 {
-            return "Favoriler"
-        }else {
-            return nil
-        }
+        let cellItem = viewModel.cellList[section]
+        return cellItem.titleForHeaderInSection
     }
 }
 
@@ -123,27 +84,3 @@ extension HomeViewController: HomeViewControllerDelegate {
     }
 }
 
-extension HomeViewController: HomeCellDelegate {
-    func getJoke(id: String) -> JokeModelProtocol? {
-        return viewModel.getJoke(id: id)
-    }
-    
-    func saveJoke(item: JokeModelProtocol) {
-        viewModel.saveJoke(item: item)
-    }
-    
-    func deleteJoke(item: JokeModelProtocol) {
-        viewModel.deleteJoke(item: item)
-    }
-    
-    func updateTableView() {
-        viewModel.getFavoriteJoke()
-    }
-    
-}
-
-extension HomeViewController: SimpleHomeCellDelegate {
-    func updateJoke() {
-        viewModel.getRemoteJoke()
-    }
-}

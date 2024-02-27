@@ -7,6 +7,6 @@
 
 import Foundation
 
-protocol SimpleHomeCellDelegate: AnyObject {
+protocol SimpleHomeCellDelegate {
     func updateJoke()
 }

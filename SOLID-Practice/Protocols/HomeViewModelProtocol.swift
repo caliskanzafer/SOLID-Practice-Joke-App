@@ -9,7 +9,8 @@ import Foundation
 
 protocol HomeViewModelProtocol {
     var delegate: HomeViewControllerDelegate? { get set }
-    var jokes: [HomeCellType] { get }
+    var cellList: [HomeCellItem] { get }
+    
     func getRemoteJoke()
     func getFavoriteJoke()
     func getJoke(id: String) -> JokeModelProtocol?
