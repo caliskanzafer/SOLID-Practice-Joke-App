@@ -9,12 +9,12 @@
 
 import UIKit
 
-final class CoreDataService {
+final class CoreDataManager {
     
     
 }
 
-extension CoreDataService: RepositoryService {
+extension CoreDataManager: RepositoryProtocol {
     func getJokes() -> [JokeModel] {
         do {
             guard let context = (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer.viewContext else { return []}

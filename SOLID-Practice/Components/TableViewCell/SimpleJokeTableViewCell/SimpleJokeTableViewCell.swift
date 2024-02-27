@@ -7,14 +7,6 @@
 
 import UIKit
 
-protocol HomeCellDelegate: AnyObject {
-    func updateTableView()
-    func updateJoke()
-    func getJoke(id: String) -> JokeModel?
-    func saveJoke(item: JokeModel)
-    func deleteJoke(item: JokeModel)
-}
-
 class SimpleJokeTableViewCell: UITableViewCell, HomeCellProtocol {
 
     @IBOutlet weak var titleLabel: UILabel!

@@ -9,7 +9,7 @@ import Foundation
 import SQLite3
 
 
-final class SqliteService {
+final class SqliteManager {
     
     var db: OpaquePointer?
     var path: String = "solidDB.sqlite"
@@ -50,7 +50,7 @@ final class SqliteService {
     }
 }
 
-extension SqliteService: RepositoryService {
+extension SqliteManager: RepositoryProtocol {
     func saveJoke(item: JokeModel) {
         let query = "INSERT INTO jokes (id,value) VALUES (?, ?);"
         

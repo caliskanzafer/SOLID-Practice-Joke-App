@@ -7,7 +7,7 @@
 
 import Foundation
 
-protocol RepositoryService {
+protocol RepositoryProtocol {
     func getJokes() -> [JokeModel]
     func getJoke(id: String) -> JokeModel?
     func getJokeEntity(id: String) -> [JokeEntity]?
