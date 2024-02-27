@@ -31,6 +31,7 @@
 		F03EA6C12B8B6DFE00A6DC4C /* HomeCellProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F03EA6C02B8B6DFE00A6DC4C /* HomeCellProtocol.swift */; };
 		F03EA6C32B8B6E6000A6DC4C /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = F03EA6C22B8B6E6000A6DC4C /* NetworkError.swift */; };
 		F0FF54292B8E4D7700AF1F6D /* SqliteService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FF54282B8E4D7700AF1F6D /* SqliteService.swift */; };
+		F0FF542B2B8E703F00AF1F6D /* RepositoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FF542A2B8E703F00AF1F6D /* RepositoryProtocol.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -60,6 +61,7 @@
 		F03EA6C02B8B6DFE00A6DC4C /* HomeCellProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCellProtocol.swift; sourceTree = "<group>"; };
 		F03EA6C22B8B6E6000A6DC4C /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
 		F0FF54282B8E4D7700AF1F6D /* SqliteService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SqliteService.swift; sourceTree = "<group>"; };
+		F0FF542A2B8E703F00AF1F6D /* RepositoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryProtocol.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -237,6 +239,7 @@
 			isa = PBXGroup;
 			children = (
 				F03EA6C02B8B6DFE00A6DC4C /* HomeCellProtocol.swift */,
+				F0FF542A2B8E703F00AF1F6D /* RepositoryProtocol.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -319,6 +322,7 @@
 				F03EA6C12B8B6DFE00A6DC4C /* HomeCellProtocol.swift in Sources */,
 				F03EA6AD2B8AA08A00A6DC4C /* UIResponder+Ext.swift in Sources */,
 				F03EA6922B8A925500A6DC4C /* NetworkService.swift in Sources */,
+				F0FF542B2B8E703F00AF1F6D /* RepositoryProtocol.swift in Sources */,
 				F03EA6A92B8A9FF100A6DC4C /* FavoriteJokeTableViewCell.swift in Sources */,
 				F03EA67F2B8A904E00A6DC4C /* SOLID_Practice.xcdatamodeld in Sources */,
 				F03EA6992B8A968F00A6DC4C /* HomeViewModel.swift in Sources */,

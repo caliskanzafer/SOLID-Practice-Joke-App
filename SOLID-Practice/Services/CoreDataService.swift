@@ -9,15 +9,6 @@
 
 import UIKit
 
-protocol RepositoryService {
-    func getJokes() -> [JokeModel]
-    func getJoke(id: String) -> JokeModel?
-    func getJokeEntity(id: String) -> [JokeEntity]?
-    func saveJoke(item: JokeModel)
-    func deleteJoke(item: JokeModel)
-    func deleteAllData()
-}
-
 final class CoreDataService {
     
     
