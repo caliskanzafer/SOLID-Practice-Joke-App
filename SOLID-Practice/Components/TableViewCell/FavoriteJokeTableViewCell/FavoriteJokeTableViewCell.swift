@@ -12,16 +12,14 @@ class FavoriteJokeTableViewCell: UITableViewCell, HomeCellProtocol {
     @IBOutlet weak var favButton: UIButton!
     @IBOutlet weak var titleLabel: UILabel!
     
-    var coreDataService = CoreDataService()
-    
-    weak var homeDelegate: HomeCellDelegate?
+    weak var delegate: HomeCellDelegate?
     
     var joke: JokeModel? {
         didSet {
             titleLabel.text = joke?.value
             if let jokeId = joke?.id {
                 
-                if let _ = coreDataService.getJoke(id: jokeId) {
+                if let _ = delegate?.getJoke(id: jokeId) {
                     isExist = true
                 }else {
                     isExist = false
@@ -42,23 +40,16 @@ class FavoriteJokeTableViewCell: UITableViewCell, HomeCellProtocol {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
     }
     
     @IBAction func favButtonPressed(_ sender: Any) {
         if let joke {
             if isExist {
-                coreDataService.deleteItem(item: joke)
+                delegate?.deleteJoke(item: joke)
             }else {
-                coreDataService.saveFavoriteJoke(item: joke)
+                delegate?.saveJoke(item: joke)
             }
-            homeDelegate?.updateTableView()
+            delegate?.updateTableView()
         }
     }
 }

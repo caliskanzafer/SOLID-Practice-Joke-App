@@ -9,7 +9,8 @@ import Foundation
 
 final class HomeViewModel {
     var networkService = NetworkService()
-    var coreDataService = CoreDataService()
+//    var coreDataService = CoreDataService()
+    var sqliteService = SqliteService()
     
     weak var delegate: HomeViewControllerDelegate?
     
@@ -41,7 +42,8 @@ final class HomeViewModel {
     
     
     func getFavoriteJoke() {
-        let jokeList = coreDataService.getJokes()
+//        let jokeList = coreDataService.getJokes()
+        let jokeList = sqliteService.getJokes()
         
         jokes.removeAll(where: { cell in
             cell == .favorite()
@@ -52,8 +54,24 @@ final class HomeViewModel {
         delegate?.reloadTableView()
     }
     
+    func getJoke(id: String) -> JokeModel? {
+//        return coreDataService.getJoke(id: id)
+        return sqliteService.getJoke(id: id)
+    }
+    
     func saveFavoriteJoke(item: JokeModel) {
-        coreDataService.saveFavoriteJoke(item: item)
+//        coreDataService.saveJoke(item: item)
+        sqliteService.saveJoke(item: item)
+    }
+    
+    func deleteJoke(item: JokeModel) {
+//        coreDataService.deleteJoke(item: item)
+        sqliteService.deleteJoke(item: item)
+    }
+    
+    func deleteAllJokes() {
+//        coreDataService.deleteAllData()
+        sqliteService.deleteAllData()
     }
 
 }

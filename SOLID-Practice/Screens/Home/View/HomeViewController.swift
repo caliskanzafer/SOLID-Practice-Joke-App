@@ -30,10 +30,9 @@ class HomeViewController: UIViewController {
         super.viewDidLoad()
         
         configureTableView()
-        
-        
         viewModel.delegate = self
         reloadAllData()
+//        viewModel.deleteAllJokes()
     }
     
 }
@@ -80,11 +79,12 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         switch cellType {
         case .remote(let joke):
             let cell = tableView.dequeueReusableCell(withIdentifier: SimpleJokeTableViewCell.identifier) as! SimpleJokeTableViewCell
-            
+            cell.delegate = self
             cell.joke = joke
             return cell
         case .favorite(let jokes):
             let cell = tableView.dequeueReusableCell(withIdentifier: FavoriteJokeTableViewCell.identifier) as! FavoriteJokeTableViewCell
+            cell.delegate = self
             let joke = jokes?[safe: indexPath.row]
             cell.joke = joke
             return cell
@@ -124,6 +124,18 @@ extension HomeViewController: HomeViewControllerDelegate {
 }
 
 extension HomeViewController: HomeCellDelegate {
+    func getJoke(id: String) -> JokeModel? {
+        return viewModel.getJoke(id: id)
+    }
+    
+    func saveJoke(item: JokeModel) {
+        viewModel.saveFavoriteJoke(item: item)
+    }
+    
+    func deleteJoke(item: JokeModel) {
+        viewModel.deleteJoke(item: item)
+    }
+    
     func updateTableView() {
         viewModel.getFavoriteJoke()
     }

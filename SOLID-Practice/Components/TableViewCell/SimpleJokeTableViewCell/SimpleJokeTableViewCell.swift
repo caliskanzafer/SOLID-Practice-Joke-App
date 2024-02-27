@@ -10,6 +10,9 @@ import UIKit
 protocol HomeCellDelegate: AnyObject {
     func updateTableView()
     func updateJoke()
+    func getJoke(id: String) -> JokeModel?
+    func saveJoke(item: JokeModel)
+    func deleteJoke(item: JokeModel)
 }
 
 class SimpleJokeTableViewCell: UITableViewCell, HomeCellProtocol {
@@ -17,16 +20,14 @@ class SimpleJokeTableViewCell: UITableViewCell, HomeCellProtocol {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var favButton: UIButton!
     
-    weak var homeDelegate: HomeCellDelegate?
-    
-    var coreDataService = CoreDataService()
+    weak var delegate: HomeCellDelegate?
     
     var joke: JokeModel? {
         didSet {
             titleLabel.text = joke?.value
             if let jokeId = joke?.id {
                 
-                if let _ = coreDataService.getJoke(id: jokeId) {
+                if let _ = delegate?.getJoke(id: jokeId) {
                     isExist = true
                 }else {
                     isExist = false
@@ -47,29 +48,27 @@ class SimpleJokeTableViewCell: UITableViewCell, HomeCellProtocol {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
     }
     
     @IBAction func favButtonPressed(_ sender: Any) {
         if let joke {
             if isExist {
-                coreDataService.deleteItem(item: joke)
+                delegate?.deleteJoke(item: joke)
             }else {
-                coreDataService.saveFavoriteJoke(item: joke)
+                delegate?.saveJoke(item: joke)
+                delegate?.updateJoke()
             }
             
-            homeDelegate?.updateTableView()
+            delegate?.updateTableView()
         }
     }
     
     @IBAction func newJokePressed(_ sender: Any) {
-        homeDelegate?.updateJoke()
+        delegate?.updateJoke()
     }
     
 }

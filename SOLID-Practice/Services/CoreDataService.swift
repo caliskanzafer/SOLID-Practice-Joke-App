@@ -5,9 +5,25 @@
 //  Created by Zafer Çalışkan on 25.02.2024.
 //
 
+
+
 import UIKit
 
+protocol RepositoryService {
+    func getJokes() -> [JokeModel]
+    func getJoke(id: String) -> JokeModel?
+    func getJokeEntity(id: String) -> [JokeEntity]?
+    func saveJoke(item: JokeModel)
+    func deleteJoke(item: JokeModel)
+    func deleteAllData()
+}
+
 final class CoreDataService {
+    
+    
+}
+
+extension CoreDataService: RepositoryService {
     func getJokes() -> [JokeModel] {
         do {
             guard let context = (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer.viewContext else { return []}
@@ -53,7 +69,7 @@ final class CoreDataService {
         }
     }
     
-    func saveFavoriteJoke(item: JokeModel) {
+    func saveJoke(item: JokeModel) {
         guard let context = (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer.viewContext else { return }
         
         let newItem = JokeEntity(context: context)
@@ -67,7 +83,7 @@ final class CoreDataService {
         }
     }
     
-    func deleteItem(item: JokeModel) {
+    func deleteJoke(item: JokeModel) {
         guard let context = (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer.viewContext else { return }
         if let jokeId = item.id, let items = getJokeEntity(id: jokeId), let item = items.first {
             context.delete(item)
@@ -78,5 +94,25 @@ final class CoreDataService {
                 
             }
         }
+    }
+    
+    func deleteAllData()
+    {
+        guard ((UIApplication.shared.delegate as? AppDelegate)?.persistentContainer.persistentStoreDescriptions.first?.url) != nil else { return }
+        
+        guard let persistentStoreCoordinator = (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer.persistentStoreCoordinator else { return }
+        
+        do {
+            for store in persistentStoreCoordinator.persistentStores {
+                try persistentStoreCoordinator.destroyPersistentStore(
+                    at: store.url!,
+                    ofType: store.type,
+                    options: nil
+                )
+            }
+        }catch {
+            
+        }
+        
     }
 }
