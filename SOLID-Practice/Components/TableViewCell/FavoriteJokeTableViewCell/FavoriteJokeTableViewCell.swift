@@ -9,8 +9,8 @@ import UIKit
 
 class FavoriteJokeTableViewCell: UITableViewCell, HomeCellProtocol {
 
-    @IBOutlet weak var favButton: UIButton!
-    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet private weak var favButton: UIButton!
+    @IBOutlet private weak var titleLabel: UILabel!
     
     weak var delegate: HomeCellDelegate?
     
@@ -28,7 +28,7 @@ class FavoriteJokeTableViewCell: UITableViewCell, HomeCellProtocol {
         }
     }
     
-    var isExist: Bool = false {
+    private var isExist: Bool = false {
         didSet {
             if isExist {
                 favButton.setTitle("Fav Çıkar", for: .normal)
@@ -42,7 +42,7 @@ class FavoriteJokeTableViewCell: UITableViewCell, HomeCellProtocol {
         super.awakeFromNib()
     }
     
-    @IBAction func favButtonPressed(_ sender: Any) {
+    @IBAction private func favButtonPressed(_ sender: Any) {
         if let joke {
             if isExist {
                 delegate?.deleteJoke(item: joke)

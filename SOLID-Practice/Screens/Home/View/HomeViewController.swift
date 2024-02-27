@@ -140,6 +140,9 @@ extension HomeViewController: HomeCellDelegate {
         viewModel.getFavoriteJoke()
     }
     
+}
+
+extension HomeViewController: SimpleHomeCellDelegate {
     func updateJoke() {
         viewModel.getRemoteJoke()
     }

@@ -8,7 +8,5 @@
 import Foundation
 
 protocol HomeCellProtocol {
-    
     var joke: JokeModelProtocol? { get }
-    var isExist: Bool { get set }
 }

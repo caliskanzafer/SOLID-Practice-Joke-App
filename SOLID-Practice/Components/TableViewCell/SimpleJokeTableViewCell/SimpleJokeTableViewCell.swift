@@ -7,20 +7,14 @@
 
 import UIKit
 
-protocol HomeCellDelegate: AnyObject {
-    func updateTableView()
-    func updateJoke()
-    func getJoke(id: String) -> JokeModelProtocol?
-    func saveJoke(item: JokeModelProtocol)
-    func deleteJoke(item: JokeModelProtocol)
-}
+typealias DelegateType = HomeCellDelegate & SimpleHomeCellDelegate
 
 class SimpleJokeTableViewCell: UITableViewCell, HomeCellProtocol {
 
-    @IBOutlet weak var titleLabel: UILabel!
-    @IBOutlet weak var favButton: UIButton!
+    @IBOutlet private weak var titleLabel: UILabel!
+    @IBOutlet private weak var favButton: UIButton!
     
-    weak var delegate: HomeCellDelegate?
+    weak var delegate: DelegateType?
     
     var joke: JokeModelProtocol? {
         didSet {
@@ -36,7 +30,7 @@ class SimpleJokeTableViewCell: UITableViewCell, HomeCellProtocol {
         }
     }
     
-    var isExist: Bool = false {
+    private var isExist: Bool = false {
         didSet {
             if isExist {
                 favButton.setTitle("Fav Çıkar", for: .normal)
@@ -48,10 +42,6 @@ class SimpleJokeTableViewCell: UITableViewCell, HomeCellProtocol {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
     }
     
     @IBAction func favButtonPressed(_ sender: Any) {
@@ -70,5 +60,4 @@ class SimpleJokeTableViewCell: UITableViewCell, HomeCellProtocol {
     @IBAction func newJokePressed(_ sender: Any) {
         delegate?.updateJoke()
     }
-    
 }

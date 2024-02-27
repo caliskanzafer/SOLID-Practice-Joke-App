@@ -39,6 +39,8 @@
 		F0FF54372B8E774D00AF1F6D /* HomeServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FF54362B8E774D00AF1F6D /* HomeServiceProtocol.swift */; };
 		F0FF543B2B8E776B00AF1F6D /* HomeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FF543A2B8E776B00AF1F6D /* HomeService.swift */; };
 		F0FF543D2B8E777100AF1F6D /* HomeRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FF543C2B8E777100AF1F6D /* HomeRepository.swift */; };
+		F0FF543F2B8E7FB700AF1F6D /* HomeCellDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FF543E2B8E7FB700AF1F6D /* HomeCellDelegate.swift */; };
+		F0FF54412B8E7FCA00AF1F6D /* SimpleHomeCellDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FF54402B8E7FCA00AF1F6D /* SimpleHomeCellDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -76,6 +78,8 @@
 		F0FF54362B8E774D00AF1F6D /* HomeServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeServiceProtocol.swift; sourceTree = "<group>"; };
 		F0FF543A2B8E776B00AF1F6D /* HomeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeService.swift; sourceTree = "<group>"; };
 		F0FF543C2B8E777100AF1F6D /* HomeRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRepository.swift; sourceTree = "<group>"; };
+		F0FF543E2B8E7FB700AF1F6D /* HomeCellDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCellDelegate.swift; sourceTree = "<group>"; };
+		F0FF54402B8E7FCA00AF1F6D /* SimpleHomeCellDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleHomeCellDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -260,6 +264,8 @@
 				F0FF54322B8E772C00AF1F6D /* HomeViewModelProtocol.swift */,
 				F0FF54342B8E774000AF1F6D /* HomeRepositoryProtocol.swift */,
 				F0FF54362B8E774D00AF1F6D /* HomeServiceProtocol.swift */,
+				F0FF543E2B8E7FB700AF1F6D /* HomeCellDelegate.swift */,
+				F0FF54402B8E7FCA00AF1F6D /* SimpleHomeCellDelegate.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -385,8 +391,10 @@
 				F0FF54352B8E774000AF1F6D /* HomeRepositoryProtocol.swift in Sources */,
 				F03EA6952B8A95E400A6DC4C /* JokeModel.swift in Sources */,
 				F03EA6BE2B8B5ED500A6DC4C /* HomeCellType.swift in Sources */,
+				F0FF54412B8E7FCA00AF1F6D /* SimpleHomeCellDelegate.swift in Sources */,
 				F03EA6752B8A904E00A6DC4C /* AppDelegate.swift in Sources */,
 				F03EA69D2B8A9DA800A6DC4C /* HomeViewController.swift in Sources */,
+				F0FF543F2B8E7FB700AF1F6D /* HomeCellDelegate.swift in Sources */,
 				F0FF54302B8E729100AF1F6D /* HomeBuilder.swift in Sources */,
 				F03EA6B42B8AA70400A6DC4C /* JokeEntity+CoreDataClass.swift in Sources */,
 				F03EA6A32B8A9FD200A6DC4C /* SimpleJokeTableViewCell.swift in Sources */,
