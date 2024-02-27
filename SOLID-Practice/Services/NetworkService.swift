@@ -7,12 +7,16 @@
 
 import Foundation
 
-final class NetworkService {
+protocol NetworkServiceProtocol {
+    func getJoke(completion: @escaping (Result<JokeModelProtocol, NetworkError>) -> Void)
+}
+
+final class NetworkService: NetworkServiceProtocol {
     private let urlSession = URLSession(configuration: .default)
     
     let url = URL(string: "https://api.chucknorris.io/jokes/random")
     
-    func getJoke(completion: @escaping (Result<JokeModel, NetworkError>) -> Void) {
+    func getJoke(completion: @escaping (Result<JokeModelProtocol, NetworkError>) -> Void) {
         guard let url else {
             completion(.failure(.invalidUrl))
             return

@@ -10,9 +10,9 @@ import UIKit
 protocol HomeCellDelegate: AnyObject {
     func updateTableView()
     func updateJoke()
-    func getJoke(id: String) -> JokeModel?
-    func saveJoke(item: JokeModel)
-    func deleteJoke(item: JokeModel)
+    func getJoke(id: String) -> JokeModelProtocol?
+    func saveJoke(item: JokeModelProtocol)
+    func deleteJoke(item: JokeModelProtocol)
 }
 
 class SimpleJokeTableViewCell: UITableViewCell, HomeCellProtocol {
@@ -22,7 +22,7 @@ class SimpleJokeTableViewCell: UITableViewCell, HomeCellProtocol {
     
     weak var delegate: HomeCellDelegate?
     
-    var joke: JokeModel? {
+    var joke: JokeModelProtocol? {
         didSet {
             titleLabel.text = joke?.value
             if let jokeId = joke?.id {

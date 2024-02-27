@@ -15,9 +15,9 @@ class HomeViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     
-    let viewModel: HomeViewModel
+    var viewModel: HomeViewModelProtocol
     
-    init(viewModel: HomeViewModel) {
+    init(viewModel: HomeViewModelProtocol) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
     }
@@ -96,7 +96,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         switch viewModel.jokes[safe: indexPath.section] {
         case .remote(let joke):
             if let joke {
-                viewModel.saveFavoriteJoke(item: joke)
+                viewModel.saveJoke(item: joke)
             }
         default:
             print("")
@@ -124,15 +124,15 @@ extension HomeViewController: HomeViewControllerDelegate {
 }
 
 extension HomeViewController: HomeCellDelegate {
-    func getJoke(id: String) -> JokeModel? {
+    func getJoke(id: String) -> JokeModelProtocol? {
         return viewModel.getJoke(id: id)
     }
     
-    func saveJoke(item: JokeModel) {
-        viewModel.saveFavoriteJoke(item: item)
+    func saveJoke(item: JokeModelProtocol) {
+        viewModel.saveJoke(item: item)
     }
     
-    func deleteJoke(item: JokeModel) {
+    func deleteJoke(item: JokeModelProtocol) {
         viewModel.deleteJoke(item: item)
     }
     

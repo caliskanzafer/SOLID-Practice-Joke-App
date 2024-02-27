@@ -7,10 +7,14 @@
 
 import Foundation
 
-final class HomeViewModel {
-    var networkService = NetworkService()
-//    var coreDataService = CoreDataService()
-    var sqliteService = SqliteService()
+final class HomeViewModel: HomeViewModelProtocol {
+    let repository: HomeRepositoryProtocol
+    let service: HomeServiceProtocol
+    
+    init(repository: HomeRepositoryProtocol, service: HomeServiceProtocol) {
+        self.repository = repository
+        self.service = service
+    }
     
     weak var delegate: HomeViewControllerDelegate?
     
@@ -23,7 +27,7 @@ final class HomeViewModel {
     }
     
     func getRemoteJoke() {
-        networkService.getJoke { [weak self] response in
+        service.getRemoteJoke { [weak self] response in
             switch response {
             case .success(let joke):
                 self?.jokes.removeAll(where: { cell in
@@ -32,7 +36,6 @@ final class HomeViewModel {
                 
                 self?.jokes.append(.remote(joke))
                 
-                
                 self?.delegate?.reloadTableView()
             case .failure(let error):
                 print(error.localizedDescription)
@@ -40,10 +43,8 @@ final class HomeViewModel {
         }
     }
     
-    
     func getFavoriteJoke() {
-//        let jokeList = coreDataService.getJokes()
-        let jokeList = sqliteService.getJokes()
+        let jokeList = repository.getFavoriteJoke()
         
         jokes.removeAll(where: { cell in
             cell == .favorite()
@@ -54,24 +55,16 @@ final class HomeViewModel {
         delegate?.reloadTableView()
     }
     
-    func getJoke(id: String) -> JokeModel? {
-//        return coreDataService.getJoke(id: id)
-        return sqliteService.getJoke(id: id)
+    func getJoke(id: String) -> JokeModelProtocol? {
+        return repository.getJoke(id: id)
     }
     
-    func saveFavoriteJoke(item: JokeModel) {
-//        coreDataService.saveJoke(item: item)
-        sqliteService.saveJoke(item: item)
+    func saveJoke(item: JokeModelProtocol) {
+        repository.saveFavoriteJoke(item: item)
     }
     
-    func deleteJoke(item: JokeModel) {
-//        coreDataService.deleteJoke(item: item)
-        sqliteService.deleteJoke(item: item)
-    }
-    
-    func deleteAllJokes() {
-//        coreDataService.deleteAllData()
-        sqliteService.deleteAllData()
+    func deleteJoke(item: JokeModelProtocol) {
+        repository.deleteJoke(item: item)
     }
 
 }

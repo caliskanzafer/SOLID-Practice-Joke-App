@@ -9,13 +9,13 @@
 
 import UIKit
 
-final class CoreDataService {
+final class CoreDataManager {
     
     
 }
 
-extension CoreDataService: RepositoryService {
-    func getJokes() -> [JokeModel] {
+extension CoreDataManager: RepositoryManagerProtocol {
+    func getJokes() -> [JokeModelProtocol] {
         do {
             guard let context = (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer.viewContext else { return []}
             
@@ -33,7 +33,7 @@ extension CoreDataService: RepositoryService {
         }
     }
     
-    func getJoke(id: String) -> JokeModel? {
+    func getJoke(id: String) -> JokeModelProtocol? {
         let items = getJokeEntity(id: id)
         
         for item in items ?? [] {
@@ -45,22 +45,7 @@ extension CoreDataService: RepositoryService {
         
     }
     
-    func getJokeEntity(id: String) -> [JokeEntity]? {
-        do {
-            guard let context = (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer.viewContext else { return nil }
-            
-            let fetchRequest = JokeEntity.fetchRequest()
-            
-            fetchRequest.predicate = NSPredicate(format: "%K == %@" , "id", id)
-            
-            return try context.fetch(JokeEntity.fetchRequest())
-            
-        }catch {
-            return nil
-        }
-    }
-    
-    func saveJoke(item: JokeModel) {
+    func saveJoke(item: JokeModelProtocol) {
         guard let context = (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer.viewContext else { return }
         
         let newItem = JokeEntity(context: context)
@@ -74,7 +59,7 @@ extension CoreDataService: RepositoryService {
         }
     }
     
-    func deleteJoke(item: JokeModel) {
+    func deleteJoke(item: JokeModelProtocol) {
         guard let context = (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer.viewContext else { return }
         if let jokeId = item.id, let items = getJokeEntity(id: jokeId), let item = items.first {
             context.delete(item)
@@ -105,5 +90,22 @@ extension CoreDataService: RepositoryService {
             
         }
         
+    }
+}
+
+extension CoreDataManager: CoreDataRepositoryManager {
+    func getJokeEntity(id: String) -> [JokeEntity]? {
+        do {
+            guard let context = (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer.viewContext else { return nil }
+            
+            let fetchRequest = JokeEntity.fetchRequest()
+            
+            fetchRequest.predicate = NSPredicate(format: "%K == %@" , "id", id)
+            
+            return try context.fetch(JokeEntity.fetchRequest())
+            
+        }catch {
+            return nil
+        }
     }
 }

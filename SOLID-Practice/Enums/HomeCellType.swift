@@ -8,8 +8,8 @@
 import Foundation
 
 enum HomeCellType: Equatable {
-    case remote(_ joke: JokeModel? = nil)
-    case favorite(_ jokes: [JokeModel]? = nil)
+    case remote(_ joke: JokeModelProtocol? = nil)
+    case favorite(_ jokes: [JokeModelProtocol]? = nil)
     
     static func == (lhs: HomeCellType, rhs: HomeCellType) -> Bool {
         switch (lhs, rhs) {

@@ -20,9 +20,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         let window = UIWindow(windowScene: windowScene)
         
-        let viewModel = HomeViewModel()
-        let viewController = HomeViewController(viewModel: viewModel)
         
+        let viewController = HomeBuilder.generate()
         let navigationController = UINavigationController(rootViewController: viewController)
         
         window.rootViewController = navigationController

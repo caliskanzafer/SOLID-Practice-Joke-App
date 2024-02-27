@@ -7,7 +7,12 @@
 
 import Foundation
 
-struct JokeModel: Codable {
+protocol JokeModelProtocol {
+    var id: String? { get }
+    var value: String? { get }
+}
+
+struct JokeModel: Codable, JokeModelProtocol {
     let id: String?
     let value: String?
 }

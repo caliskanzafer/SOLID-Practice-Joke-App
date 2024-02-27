@@ -9,7 +9,7 @@ import Foundation
 import SQLite3
 
 
-final class SqliteService {
+final class SqliteManager {
     
     var db: OpaquePointer?
     var path: String = "solidDB.sqlite"
@@ -50,8 +50,8 @@ final class SqliteService {
     }
 }
 
-extension SqliteService: RepositoryService {
-    func saveJoke(item: JokeModel) {
+extension SqliteManager: RepositoryManagerProtocol {
+    func saveJoke(item: JokeModelProtocol) {
         let query = "INSERT INTO jokes (id,value) VALUES (?, ?);"
         
         var statement: OpaquePointer? = nil
@@ -70,8 +70,8 @@ extension SqliteService: RepositoryService {
         }
     }
     
-    func getJokes() -> [JokeModel] {
-        var mainList = [JokeModel]()
+    func getJokes() -> [JokeModelProtocol] {
+        var mainList = [JokeModelProtocol]()
         
         let query = "SELECT * FROM jokes;"
         var statement : OpaquePointer? = nil
@@ -80,7 +80,7 @@ extension SqliteService: RepositoryService {
                 let id = String(describing: String(cString: sqlite3_column_text(statement, 0)))
                 let value = String(describing: String(cString: sqlite3_column_text(statement, 1)))
                 
-                let model = JokeModel(id: id, value: value)
+                let model: JokeModelProtocol = JokeModel(id: id, value: value)
                 
                 
                 mainList.append(model)
@@ -89,7 +89,7 @@ extension SqliteService: RepositoryService {
         return mainList
     }
     
-    func getJoke(id: String) -> JokeModel? {
+    func getJoke(id: String) -> JokeModelProtocol? {
         let query = "SELECT * FROM jokes WHERE id = ?;"
         
         var statement : OpaquePointer? = nil
@@ -101,7 +101,7 @@ extension SqliteService: RepositoryService {
                 let id = String(describing: String(cString: sqlite3_column_text(statement, 0)))
                 let value = String(describing: String(cString: sqlite3_column_text(statement, 1)))
                 
-                let model = JokeModel(id: id, value: value)
+                let model: JokeModelProtocol = JokeModel(id: id, value: value)
                 
                 
                 return model
@@ -112,7 +112,7 @@ extension SqliteService: RepositoryService {
         }
     }
     
-    func deleteJoke(item: JokeModel) {
+    func deleteJoke(item: JokeModelProtocol) {
         let query = "DELETE FROM jokes WHERE id = ?"
         
         var statement: OpaquePointer? = nil
@@ -144,9 +144,5 @@ extension SqliteService: RepositoryService {
         }else {
             print("Delete All Error")
         }
-    }
-    
-    func getJokeEntity(id: String) -> [JokeEntity]? {
-        return nil
     }
 }

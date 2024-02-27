@@ -14,7 +14,7 @@ class FavoriteJokeTableViewCell: UITableViewCell, HomeCellProtocol {
     
     weak var delegate: HomeCellDelegate?
     
-    var joke: JokeModel? {
+    var joke: JokeModelProtocol? {
         didSet {
             titleLabel.text = joke?.value
             if let jokeId = joke?.id {
