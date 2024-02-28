@@ -20,7 +20,9 @@ final class HomeRepository: HomeRepositoryProtocol {
     func getFavoriteJoke() -> [JokeModelProtocol] {
         do {
             return try manager.getJokes()
-        }catch {
+        }catch ManagerError.fetchError {
+            return []
+        } catch {
             return []
         }
     }
