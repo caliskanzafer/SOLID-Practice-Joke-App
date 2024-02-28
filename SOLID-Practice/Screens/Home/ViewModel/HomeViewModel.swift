@@ -52,8 +52,13 @@ final class HomeViewModel {
             jokes.append(.favorite(jokeList))
             
             delegate?.reloadTableView()
+            
+        }catch SqliteError.fetchError {
+            print("SqliteError")
+        }catch CoreDataError.fetchError {
+            print("CoreDataError")
         }catch {
-            print(error.localizedDescription)
+            print("Unexpected Error")
         }
     }
     
