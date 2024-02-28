@@ -15,7 +15,7 @@ final class CoreDataManager {
 }
 
 extension CoreDataManager: RepositoryManagerProtocol {
-    func getJokes() -> [JokeModelProtocol] {
+    func getJokes() throws -> [JokeModelProtocol] {
         do {
             guard let context = (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer.viewContext else { return []}
             
@@ -29,7 +29,7 @@ extension CoreDataManager: RepositoryManagerProtocol {
             
             return jokeList
         }catch {
-            return []
+            throw ManagerError.fetchError
         }
     }
     

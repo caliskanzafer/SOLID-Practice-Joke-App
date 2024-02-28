@@ -70,23 +70,28 @@ extension SqliteManager: RepositoryManagerProtocol {
         }
     }
     
-    func getJokes() -> [JokeModelProtocol] {
+    func getJokes() throws -> [JokeModelProtocol] {
         var mainList = [JokeModelProtocol]()
         
-        let query = "SELECT * FROM jokes;"
-        var statement : OpaquePointer? = nil
-        if sqlite3_prepare_v2(db, query, -1, &statement, nil) == SQLITE_OK{
-            while sqlite3_step(statement) == SQLITE_ROW {
-                let id = String(describing: String(cString: sqlite3_column_text(statement, 0)))
-                let value = String(describing: String(cString: sqlite3_column_text(statement, 1)))
-                
-                let model: JokeModelProtocol = JokeModel(id: id, value: value)
-                
-                
-                mainList.append(model)
+        do {
+            let query = "SELECT * FROM jokes;"
+            var statement : OpaquePointer? = nil
+            if sqlite3_prepare_v2(db, query, -1, &statement, nil) == SQLITE_OK{
+                while sqlite3_step(statement) == SQLITE_ROW {
+                    let id = String(describing: String(cString: sqlite3_column_text(statement, 0)))
+                    let value = String(describing: String(cString: sqlite3_column_text(statement, 1)))
+                    
+                    let model: JokeModelProtocol = JokeModel(id: id, value: value)
+                    
+                    
+                    mainList.append(model)
+                }
             }
+            return mainList
+        }catch {
+            throw ManagerError.fetchError
         }
-        return mainList
+       
     }
     
     func getJoke(id: String) -> JokeModelProtocol? {

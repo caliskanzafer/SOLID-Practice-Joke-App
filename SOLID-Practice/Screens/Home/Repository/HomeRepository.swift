@@ -18,7 +18,11 @@ final class HomeRepository: HomeRepositoryProtocol {
     }
     
     func getFavoriteJoke() -> [JokeModelProtocol] {
-        return manager.getJokes()
+        do {
+            return try manager.getJokes()
+        }catch {
+            return []
+        }
     }
     
     func getJoke(id: String) -> JokeModelProtocol? {

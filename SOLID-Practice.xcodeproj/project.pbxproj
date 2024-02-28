@@ -29,6 +29,7 @@
 		F03EA6BB2B8AB49A00A6DC4C /* Array+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = F03EA6BA2B8AB49A00A6DC4C /* Array+Ext.swift */; };
 		F03EA6C12B8B6DFE00A6DC4C /* HomeCellProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F03EA6C02B8B6DFE00A6DC4C /* HomeCellProtocol.swift */; };
 		F03EA6C32B8B6E6000A6DC4C /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = F03EA6C22B8B6E6000A6DC4C /* NetworkError.swift */; };
+		F0C8AB8D2B8FAD8A00848415 /* ManagerError.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0C8AB8C2B8FAD8A00848415 /* ManagerError.swift */; };
 		F0FF54292B8E4D7700AF1F6D /* SqliteManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FF54282B8E4D7700AF1F6D /* SqliteManager.swift */; };
 		F0FF542B2B8E703F00AF1F6D /* RepositoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FF542A2B8E703F00AF1F6D /* RepositoryProtocol.swift */; };
 		F0FF542D2B8E709E00AF1F6D /* CoreDataRepositoryManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FF542C2B8E709E00AF1F6D /* CoreDataRepositoryManager.swift */; };
@@ -70,6 +71,7 @@
 		F03EA6BA2B8AB49A00A6DC4C /* Array+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Ext.swift"; sourceTree = "<group>"; };
 		F03EA6C02B8B6DFE00A6DC4C /* HomeCellProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCellProtocol.swift; sourceTree = "<group>"; };
 		F03EA6C22B8B6E6000A6DC4C /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
+		F0C8AB8C2B8FAD8A00848415 /* ManagerError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManagerError.swift; sourceTree = "<group>"; };
 		F0FF54282B8E4D7700AF1F6D /* SqliteManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SqliteManager.swift; sourceTree = "<group>"; };
 		F0FF542A2B8E703F00AF1F6D /* RepositoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryProtocol.swift; sourceTree = "<group>"; };
 		F0FF542C2B8E709E00AF1F6D /* CoreDataRepositoryManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataRepositoryManager.swift; sourceTree = "<group>"; };
@@ -256,6 +258,7 @@
 			isa = PBXGroup;
 			children = (
 				F03EA6C22B8B6E6000A6DC4C /* NetworkError.swift */,
+				F0C8AB8C2B8FAD8A00848415 /* ManagerError.swift */,
 			);
 			path = Enums;
 			sourceTree = "<group>";
@@ -400,6 +403,7 @@
 				F0FF54412B8E7FCA00AF1F6D /* SimpleHomeCellDelegate.swift in Sources */,
 				F03EA6752B8A904E00A6DC4C /* AppDelegate.swift in Sources */,
 				F03EA69D2B8A9DA800A6DC4C /* HomeViewController.swift in Sources */,
+				F0C8AB8D2B8FAD8A00848415 /* ManagerError.swift in Sources */,
 				F0FF543F2B8E7FB700AF1F6D /* HomeCellDelegate.swift in Sources */,
 				F0FF54302B8E729100AF1F6D /* HomeBuilder.swift in Sources */,
 				F03EA6B42B8AA70400A6DC4C /* JokeEntity+CoreDataClass.swift in Sources */,
