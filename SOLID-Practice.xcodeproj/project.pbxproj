@@ -30,6 +30,8 @@
 		F03EA6BE2B8B5ED500A6DC4C /* HomeCellType.swift in Sources */ = {isa = PBXBuildFile; fileRef = F03EA6BD2B8B5ED500A6DC4C /* HomeCellType.swift */; };
 		F03EA6C12B8B6DFE00A6DC4C /* HomeCellProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F03EA6C02B8B6DFE00A6DC4C /* HomeCellProtocol.swift */; };
 		F03EA6C32B8B6E6000A6DC4C /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = F03EA6C22B8B6E6000A6DC4C /* NetworkError.swift */; };
+		F0C8AB892B8FAD5400848415 /* CoreDataError.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0C8AB882B8FAD5400848415 /* CoreDataError.swift */; };
+		F0C8AB8B2B8FAD5B00848415 /* SqliteError.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0C8AB8A2B8FAD5B00848415 /* SqliteError.swift */; };
 		F0FF54292B8E4D7700AF1F6D /* SqliteManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FF54282B8E4D7700AF1F6D /* SqliteManager.swift */; };
 		F0FF542B2B8E703F00AF1F6D /* RepositoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FF542A2B8E703F00AF1F6D /* RepositoryProtocol.swift */; };
 		F0FF544E2B8E987E00AF1F6D /* HomeCellDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FF544D2B8E987E00AF1F6D /* HomeCellDelegate.swift */; };
@@ -61,6 +63,8 @@
 		F03EA6BD2B8B5ED500A6DC4C /* HomeCellType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCellType.swift; sourceTree = "<group>"; };
 		F03EA6C02B8B6DFE00A6DC4C /* HomeCellProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCellProtocol.swift; sourceTree = "<group>"; };
 		F03EA6C22B8B6E6000A6DC4C /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
+		F0C8AB882B8FAD5400848415 /* CoreDataError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataError.swift; sourceTree = "<group>"; };
+		F0C8AB8A2B8FAD5B00848415 /* SqliteError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SqliteError.swift; sourceTree = "<group>"; };
 		F0FF54282B8E4D7700AF1F6D /* SqliteManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SqliteManager.swift; sourceTree = "<group>"; };
 		F0FF542A2B8E703F00AF1F6D /* RepositoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryProtocol.swift; sourceTree = "<group>"; };
 		F0FF544D2B8E987E00AF1F6D /* HomeCellDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCellDelegate.swift; sourceTree = "<group>"; };
@@ -232,6 +236,8 @@
 			children = (
 				F03EA6BD2B8B5ED500A6DC4C /* HomeCellType.swift */,
 				F03EA6C22B8B6E6000A6DC4C /* NetworkError.swift */,
+				F0C8AB882B8FAD5400848415 /* CoreDataError.swift */,
+				F0C8AB8A2B8FAD5B00848415 /* SqliteError.swift */,
 			);
 			path = Enums;
 			sourceTree = "<group>";
@@ -329,6 +335,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F03EA6B92B8AA87E00A6DC4C /* CoreDataManager.swift in Sources */,
+				F0C8AB8B2B8FAD5B00848415 /* SqliteError.swift in Sources */,
 				F03EA6AF2B8AA09900A6DC4C /* UITableView+Ext.swift in Sources */,
 				F03EA6C12B8B6DFE00A6DC4C /* HomeCellProtocol.swift in Sources */,
 				F03EA6AD2B8AA08A00A6DC4C /* UIResponder+Ext.swift in Sources */,
@@ -347,6 +354,7 @@
 				F03EA6C32B8B6E6000A6DC4C /* NetworkError.swift in Sources */,
 				F0FF544E2B8E987E00AF1F6D /* HomeCellDelegate.swift in Sources */,
 				F0FF54292B8E4D7700AF1F6D /* SqliteManager.swift in Sources */,
+				F0C8AB892B8FAD5400848415 /* CoreDataError.swift in Sources */,
 				F03EA6772B8A904E00A6DC4C /* SceneDelegate.swift in Sources */,
 				F03EA6B52B8AA70400A6DC4C /* JokeEntity+CoreDataProperties.swift in Sources */,
 			);

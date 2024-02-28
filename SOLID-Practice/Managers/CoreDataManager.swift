@@ -9,10 +9,6 @@
 
 import UIKit
 
-enum CoreDataError: Error {
-    case fetchError
-}
-
 final class CoreDataManager {
     
     

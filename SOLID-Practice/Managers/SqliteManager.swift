@@ -8,10 +8,6 @@
 import Foundation
 import SQLite3
 
-enum SqliteError: Error {
-    case fetchError
-}
-
 final class SqliteManager {
     
     var db: OpaquePointer?
