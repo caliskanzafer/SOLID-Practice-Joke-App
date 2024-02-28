@@ -8,7 +8,7 @@
 import Foundation
 
 protocol RepositoryProtocol {
-    func getJokes() -> [JokeModel]
+    func getJokes() throws -> [JokeModel]
     func getJoke(id: String) -> JokeModel?
     func getJokeEntity(id: String) -> [JokeEntity]?
     func saveJoke(item: JokeModel)

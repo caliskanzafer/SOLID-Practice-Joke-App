@@ -9,13 +9,17 @@
 
 import UIKit
 
+enum CoreDataError: Error {
+    case fetchError
+}
+
 final class CoreDataManager {
     
     
 }
 
 extension CoreDataManager: RepositoryProtocol {
-    func getJokes() -> [JokeModel] {
+    func getJokes() throws -> [JokeModel] {
         do {
             guard let context = (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer.viewContext else { return []}
             
@@ -29,7 +33,7 @@ extension CoreDataManager: RepositoryProtocol {
             
             return jokeList
         }catch {
-            return []
+            throw CoreDataError.fetchError
         }
     }
     

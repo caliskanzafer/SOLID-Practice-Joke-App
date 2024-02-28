@@ -43,15 +43,18 @@ final class HomeViewModel {
     
     func getFavoriteJoke() {
 //        let jokeList = coreDataManager.getJokes()
-        let jokeList = sqliteManager.getJokes()
-        
-        jokes.removeAll(where: { cell in
-            cell == .favorite()
-        })
-        
-        jokes.append(.favorite(jokeList))
-        
-        delegate?.reloadTableView()
+        do {
+            let jokeList = try sqliteManager.getJokes()
+            jokes.removeAll(where: { cell in
+                cell == .favorite()
+            })
+            
+            jokes.append(.favorite(jokeList))
+            
+            delegate?.reloadTableView()
+        }catch {
+            print(error.localizedDescription)
+        }
     }
     
     func getJoke(id: String) -> JokeModel? {
