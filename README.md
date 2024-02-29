@@ -9,6 +9,8 @@ However, as I mentioned before, the subject of the project is not about having a
 
 I'm writing a Medium article about this topic
 
+[PDF](SOLID-Practice/solid-notes.pdf)
+
 [Article]()
 
 
