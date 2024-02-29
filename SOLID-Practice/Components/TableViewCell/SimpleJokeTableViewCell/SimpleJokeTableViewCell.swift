@@ -9,7 +9,7 @@ import UIKit
 
 typealias DelegateType = HomeCellDelegate & SimpleHomeCellDelegate
 
-class SimpleJokeTableViewCell: UITableViewCell, HomeCellProtocol {
+final class SimpleJokeTableViewCell: UITableViewCell, HomeCellProtocol {
 
     @IBOutlet private weak var titleLabel: UILabel!
     @IBOutlet private weak var favButton: UIButton!
@@ -33,9 +33,9 @@ class SimpleJokeTableViewCell: UITableViewCell, HomeCellProtocol {
     private var isExist: Bool = false {
         didSet {
             if isExist {
-                favButton.setTitle("Fav Çıkar", for: .normal)
+                favButton.setTitle("Remove Favorite", for: .normal)
             }else {
-                favButton.setTitle("Fav Ekle", for: .normal)
+                favButton.setTitle("Add Favorite", for: .normal)
             }
         }
     }

@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F037749A2B90E21600D2DDD3 /* SimpleHomeCellItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F03774992B90E21600D2DDD3 /* SimpleHomeCellItem.swift */; };
+		F037749D2B90E29000D2DDD3 /* HomeDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = F037749C2B90E29000D2DDD3 /* HomeDataProvider.swift */; };
+		F037749F2B90F9FC00D2DDD3 /* HomeDataProviderProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F037749E2B90F9FC00D2DDD3 /* HomeDataProviderProtocol.swift */; };
 		F03EA6752B8A904E00A6DC4C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F03EA6742B8A904E00A6DC4C /* AppDelegate.swift */; };
 		F03EA6772B8A904E00A6DC4C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F03EA6762B8A904E00A6DC4C /* SceneDelegate.swift */; };
 		F03EA67F2B8A904E00A6DC4C /* SOLID_Practice.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F03EA67D2B8A904E00A6DC4C /* SOLID_Practice.xcdatamodeld */; };
@@ -47,6 +50,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		F03774992B90E21600D2DDD3 /* SimpleHomeCellItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleHomeCellItem.swift; sourceTree = "<group>"; };
+		F037749C2B90E29000D2DDD3 /* HomeDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeDataProvider.swift; sourceTree = "<group>"; };
+		F037749E2B90F9FC00D2DDD3 /* HomeDataProviderProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeDataProviderProtocol.swift; sourceTree = "<group>"; };
 		F03EA6712B8A904E00A6DC4C /* SOLID-Practice.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SOLID-Practice.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F03EA6742B8A904E00A6DC4C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F03EA6762B8A904E00A6DC4C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -99,6 +105,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F037749B2B90E28100D2DDD3 /* DataProvider */ = {
+			isa = PBXGroup;
+			children = (
+				F037749C2B90E29000D2DDD3 /* HomeDataProvider.swift */,
+			);
+			path = DataProvider;
+			sourceTree = "<group>";
+		};
 		F03EA6682B8A904E00A6DC4C = {
 			isa = PBXGroup;
 			children = (
@@ -148,6 +162,7 @@
 		F03EA68E2B8A907400A6DC4C /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				F037749B2B90E28100D2DDD3 /* DataProvider */,
 				F0FF542E2B8E728900AF1F6D /* Builder */,
 				F0FF54392B8E775E00AF1F6D /* Repository */,
 				F0FF54382B8E775700AF1F6D /* Service */,
@@ -275,6 +290,8 @@
 				F0FF543E2B8E7FB700AF1F6D /* HomeCellDelegate.swift */,
 				F0FF54402B8E7FCA00AF1F6D /* SimpleHomeCellDelegate.swift */,
 				F0FF54462B8E93B200AF1F6D /* HomeCellItem.swift */,
+				F03774992B90E21600D2DDD3 /* SimpleHomeCellItem.swift */,
+				F037749E2B90F9FC00D2DDD3 /* HomeDataProviderProtocol.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -389,7 +406,9 @@
 				F0FF54492B8E946D00AF1F6D /* SimpleJokeCell.swift in Sources */,
 				F03EA6AF2B8AA09900A6DC4C /* UITableView+Ext.swift in Sources */,
 				F03EA6C12B8B6DFE00A6DC4C /* HomeCellProtocol.swift in Sources */,
+				F037749F2B90F9FC00D2DDD3 /* HomeDataProviderProtocol.swift in Sources */,
 				F03EA6AD2B8AA08A00A6DC4C /* UIResponder+Ext.swift in Sources */,
+				F037749D2B90E29000D2DDD3 /* HomeDataProvider.swift in Sources */,
 				F03EA6922B8A925500A6DC4C /* NetworkService.swift in Sources */,
 				F0FF542B2B8E703F00AF1F6D /* RepositoryProtocol.swift in Sources */,
 				F03EA6A92B8A9FF100A6DC4C /* FavoriteJokeTableViewCell.swift in Sources */,
@@ -414,6 +433,7 @@
 				F0FF544B2B8E955200AF1F6D /* FavoriteJokeCell.swift in Sources */,
 				F0FF54292B8E4D7700AF1F6D /* SqliteManager.swift in Sources */,
 				F03EA6772B8A904E00A6DC4C /* SceneDelegate.swift in Sources */,
+				F037749A2B90E21600D2DDD3 /* SimpleHomeCellItem.swift in Sources */,
 				F0FF54472B8E93B200AF1F6D /* HomeCellItem.swift in Sources */,
 				F03EA6B52B8AA70400A6DC4C /* JokeEntity+CoreDataProperties.swift in Sources */,
 				F0FF54332B8E772C00AF1F6D /* HomeViewModelProtocol.swift in Sources */,

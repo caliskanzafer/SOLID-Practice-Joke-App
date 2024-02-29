@@ -7,13 +7,11 @@
 
 import Foundation
 
-typealias ManagerProtocol = RepositoryManagerProtocol
-
 final class HomeRepository: HomeRepositoryProtocol {
     
-    let manager: ManagerProtocol
+    let manager: RepositoryManagerProtocol
     
-    init(manager: ManagerProtocol) {
+    init(manager: RepositoryManagerProtocol) {
         self.manager = manager
     }
     

@@ -7,7 +7,7 @@
 
 import UIKit
 
-class FavoriteJokeTableViewCell: UITableViewCell, HomeCellProtocol {
+final class FavoriteJokeTableViewCell: UITableViewCell, HomeCellProtocol {
 
     @IBOutlet private weak var favButton: UIButton!
     @IBOutlet private weak var titleLabel: UILabel!
@@ -31,9 +31,9 @@ class FavoriteJokeTableViewCell: UITableViewCell, HomeCellProtocol {
     private var isExist: Bool = false {
         didSet {
             if isExist {
-                favButton.setTitle("Fav Çıkar", for: .normal)
+                favButton.setTitle("Remove Favorite", for: .normal)
             }else {
-                favButton.setTitle("Fav Ekle", for: .normal)
+                favButton.setTitle("Add Favorite", for: .normal)
             }
         }
     }

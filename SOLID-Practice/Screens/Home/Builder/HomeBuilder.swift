@@ -14,7 +14,8 @@ enum HomeBuilder {
         
         let homeService: HomeServiceProtocol = HomeService(service: service)
         let homeRepository: HomeRepositoryProtocol = HomeRepository(manager: manager)
-        let homeViewModel: HomeViewModelProtocol = HomeViewModel(repository: homeRepository, service: homeService)
+        let homeDataProvider: HomeDataProviderProtocol = HomeDataProvider(repository: homeRepository, service: homeService)
+        let homeViewModel: HomeViewModelProtocol = HomeViewModel(dataProvider: homeDataProvider)
         let homeViewController = HomeViewController(viewModel: homeViewModel)
         
         return homeViewController

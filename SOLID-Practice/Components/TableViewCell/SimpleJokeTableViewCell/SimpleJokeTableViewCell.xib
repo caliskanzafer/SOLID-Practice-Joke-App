@@ -28,7 +28,7 @@
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HCX-E9-k3L">
                         <rect key="frame" x="36" y="90" width="248" height="35.666666666666657"/>
                         <state key="normal" title="Button"/>
-                        <buttonConfiguration key="configuration" style="tinted" title="Button"/>
+                        <buttonConfiguration key="configuration" style="tinted"/>
                         <connections>
                             <action selector="favButtonPressed:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="REg-Sk-11s"/>
                         </connections>
@@ -36,7 +36,7 @@
                     <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bXK-56-FxG">
                         <rect key="frame" x="36" y="145.66666666666666" width="248" height="34.333333333333343"/>
                         <state key="normal" title="Button"/>
-                        <buttonConfiguration key="configuration" style="tinted" title="Yeni Şaka"/>
+                        <buttonConfiguration key="configuration" style="tinted" title="New Joke"/>
                         <connections>
                             <action selector="newJokePressed:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="r2L-BO-FHX"/>
                         </connections>

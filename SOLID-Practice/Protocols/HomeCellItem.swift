@@ -16,5 +16,6 @@ protocol HomeCellItem {
     
     var cellForRowAt: (_ tableView: UITableView, _ indexPath: IndexPath) -> UITableViewCell { get }
     
-    var titleForHeaderInSection: String { get }
+    func titleForHeaderInSection() -> String 
+    
 }

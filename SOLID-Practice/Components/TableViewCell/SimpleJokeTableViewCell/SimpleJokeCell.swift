@@ -7,7 +7,8 @@
 
 import UIKit
 
-class SimpleJokeCell: HomeCellItem {
+class SimpleJokeCell: HomeCellItem, SimpleHomeCellItem {
+    
     let viewModel: HomeViewModelProtocol?
     let orderIndex: Int = 1
     let joke: JokeModelProtocol?
@@ -30,8 +31,12 @@ class SimpleJokeCell: HomeCellItem {
         }
     }
     
-    var titleForHeaderInSection: String {
-        "Şaka"
+    func titleForHeaderInSection() -> String {
+        return simpleJokeTitle()
+    }
+    
+    func simpleJokeTitle() -> String {
+        return "Joke"
     }
     
 }

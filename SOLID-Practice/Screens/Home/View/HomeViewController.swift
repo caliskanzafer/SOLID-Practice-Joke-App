@@ -71,7 +71,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         let cellItem = viewModel.cellList[section]
-        return cellItem.titleForHeaderInSection
+        return cellItem.titleForHeaderInSection()
     }
 }
 

@@ -8,6 +8,7 @@
 import UIKit
 
 class FavoriteJokeCell: HomeCellItem {
+
     let viewModel: HomeViewModelProtocol?
     let orderIndex: Int = 2
     let jokes: [JokeModelProtocol]?
@@ -29,9 +30,9 @@ class FavoriteJokeCell: HomeCellItem {
             return cell
         }
     }
-   
-    var titleForHeaderInSection: String {
-        "Favoriler"
+    
+    func titleForHeaderInSection() -> String {
+        "Favorites"
     }
     
 }
@@ -50,11 +51,5 @@ extension FavoriteJokeCell: HomeCellDelegate {
     
     func updateTableView() {
         viewModel?.getFavoriteJoke()
-    }
-}
-
-extension FavoriteJokeCell: SimpleHomeCellDelegate {
-    func updateJoke() {
-        viewModel?.getRemoteJoke()
     }
 }

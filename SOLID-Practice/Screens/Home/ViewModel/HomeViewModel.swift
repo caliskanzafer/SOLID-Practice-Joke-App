@@ -9,66 +9,75 @@ import Foundation
 
 final class HomeViewModel: HomeViewModelProtocol {
     
+    let dataProvider: HomeDataProviderProtocol
     
-    let repository: HomeRepositoryProtocol
-    let service: HomeServiceProtocol
-    
-    init(repository: HomeRepositoryProtocol, service: HomeServiceProtocol) {
-        self.repository = repository
-        self.service = service
+    init(dataProvider: HomeDataProviderProtocol) {
+        self.dataProvider = dataProvider
     }
     
     weak var delegate: HomeViewControllerDelegate?
     
     var cellList: [HomeCellItem] = [] {
         didSet {
-            cellList.sort(by: { s1, s2 in
-                s1.orderIndex < s2.orderIndex
-            })
+            sortCells()
         }
     }
     
     func getRemoteJoke() {
-        service.getRemoteJoke { [weak self] response in
-            switch response {
-            case .success(let joke):
-                guard let self = self else { return }
-                
-                self.cellList.removeAll { cell in
-                    type(of: cell) == SimpleJokeCell.self
-                }
-                
-                self.cellList.append(SimpleJokeCell(viewModel: self, joke: joke))
-                
-                self.delegate?.reloadTableView()
-            case .failure(let error):
-                print(error.localizedDescription)
-            }
+        dataProvider.getRemoteJoke { [weak self] joke in
+            guard let self = self, let joke else { return }
+            
+            self.updateRemoteJoke(with: joke)
+            
+            self.delegate?.reloadTableView()
         }
     }
     
+    
     func getFavoriteJoke() {
-        let jokeList = repository.getFavoriteJoke()
+        let jokeList = dataProvider.getFavoriteJokes()
         
+        updateFavoriteJokes(with: jokeList)
+        
+        delegate?.reloadTableView()
+    }
+
+    func getJoke(id: String) -> JokeModelProtocol? {
+        return dataProvider.getJoke(id: id)
+    }
+    
+    func saveJoke(item: JokeModelProtocol) {
+        dataProvider.saveJoke(item: item)
+        
+    }
+    
+    func deleteJoke(item: JokeModelProtocol) {
+        dataProvider.deleteJoke(item: item)
+    }
+
+}
+
+private extension HomeViewModel {
+    
+    func sortCells() {
+        cellList.sort(by: { s1, s2 in
+            s1.orderIndex < s2.orderIndex
+        })
+    }
+    
+    func updateRemoteJoke(with joke: JokeModelProtocol) {
+        self.cellList.removeAll { cell in
+            type(of: cell) == SimpleJokeCell.self
+        }
+        
+        self.cellList.append(SimpleJokeCell(viewModel: self, joke: joke))
+    }
+    
+    func updateFavoriteJokes(with jokes: [JokeModelProtocol]) {
         self.cellList.removeAll { cell in
             type(of: cell) == FavoriteJokeCell.self
         }
         
-        self.cellList.append(FavoriteJokeCell(viewModel: self, jokes: jokeList))
-        
-        delegate?.reloadTableView()
+        self.cellList.append(FavoriteJokeCell(viewModel: self, jokes: jokes))
     }
-    
-    func getJoke(id: String) -> JokeModelProtocol? {
-        return repository.getJoke(id: id)
-    }
-    
-    func saveJoke(item: JokeModelProtocol) {
-        repository.saveFavoriteJoke(item: item)
-    }
-    
-    func deleteJoke(item: JokeModelProtocol) {
-        repository.deleteJoke(item: item)
-    }
-
 }
