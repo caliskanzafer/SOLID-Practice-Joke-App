@@ -9,9 +9,9 @@ import Foundation
 
 final class HomeRepository: HomeRepositoryProtocol {
     
-    let manager: RepositoryManagerProtocol
+    let manager: ManagerProtocol
     
-    init(manager: RepositoryManagerProtocol) {
+    init(manager: ManagerProtocol) {
         self.manager = manager
     }
     

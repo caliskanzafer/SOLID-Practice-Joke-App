@@ -50,7 +50,7 @@ final class SqliteManager {
     }
 }
 
-extension SqliteManager: RepositoryManagerProtocol {
+extension SqliteManager: ManagerProtocol {
     func saveJoke(item: JokeModelProtocol) {
         let query = "INSERT INTO jokes (id,value) VALUES (?, ?);"
         

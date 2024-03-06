@@ -7,7 +7,7 @@
 
 import Foundation
 
-protocol RepositoryManagerProtocol {
+protocol ManagerProtocol {
     func getJokes() throws -> [JokeModelProtocol]
     func getJoke(id: String) -> JokeModelProtocol?
     func saveJoke(item: JokeModelProtocol)

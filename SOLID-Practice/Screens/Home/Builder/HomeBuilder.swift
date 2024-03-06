@@ -9,7 +9,7 @@ import UIKit
 
 enum HomeBuilder {
     static func generate() -> UIViewController {
-        let manager: RepositoryManagerProtocol = SqliteManager()
+        let manager: ManagerProtocol = SqliteManager()
         let service: NetworkServiceProtocol = NetworkService()
         
         let homeService: HomeServiceProtocol = HomeService(service: service)
