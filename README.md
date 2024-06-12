@@ -8,7 +8,7 @@ The main purpose of this project is to demonstrate the application of the SOLID 
 
 ## Documentation
 
-I have written a Medium article discussing the implementation of SOLID principles in this project. You can find the article [here](Article).
+I have written a Medium article discussing the implementation of SOLID principles in this project. You can find the article [here](https://medium.com/appcent/swift-dilinde-solid-prensipleri-ve-projede-kullanımı-b6bcad7b70f3).
 
 Additionally, you can refer to the accompanying PDF document for detailed notes on the SOLID principles applied in this project: [PDF](SOLID-Practice/solid-notes.pdf).
 
