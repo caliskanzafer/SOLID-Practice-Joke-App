@@ -58,18 +58,18 @@ final class HomeViewModel: HomeViewModelProtocol {
 }
 
 private extension HomeViewModel {
-    
     func sortCells() {
-        cellList.sort(by: { s1, s2 in
-            s1.orderIndex < s2.orderIndex
-        })
+        if cellList.count > 2 {
+            cellList.sort(by: { s1, s2 in
+                s1.orderIndex < s2.orderIndex
+            })
+        }
     }
-    
+
     func updateRemoteJoke(with joke: JokeModelProtocol) {
         self.cellList.removeAll { cell in
             type(of: cell) == SimpleJokeCell.self
         }
-        
         self.cellList.append(SimpleJokeCell(viewModel: self, joke: joke))
     }
     

@@ -33,6 +33,7 @@
 		F03EA6C12B8B6DFE00A6DC4C /* HomeCellProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F03EA6C02B8B6DFE00A6DC4C /* HomeCellProtocol.swift */; };
 		F03EA6C32B8B6E6000A6DC4C /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = F03EA6C22B8B6E6000A6DC4C /* NetworkError.swift */; };
 		F0C8AB8D2B8FAD8A00848415 /* ManagerError.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0C8AB8C2B8FAD8A00848415 /* ManagerError.swift */; };
+		F0C98AC72C19E8D30009A0E8 /* SOLID-Practice.docc in Sources */ = {isa = PBXBuildFile; fileRef = F0C98AC62C19E8D30009A0E8 /* SOLID-Practice.docc */; };
 		F0FF54292B8E4D7700AF1F6D /* SqliteManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FF54282B8E4D7700AF1F6D /* SqliteManager.swift */; };
 		F0FF542B2B8E703F00AF1F6D /* RepositoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FF542A2B8E703F00AF1F6D /* RepositoryProtocol.swift */; };
 		F0FF542D2B8E709E00AF1F6D /* CoreDataRepositoryManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FF542C2B8E709E00AF1F6D /* CoreDataRepositoryManager.swift */; };
@@ -78,6 +79,7 @@
 		F03EA6C02B8B6DFE00A6DC4C /* HomeCellProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCellProtocol.swift; sourceTree = "<group>"; };
 		F03EA6C22B8B6E6000A6DC4C /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
 		F0C8AB8C2B8FAD8A00848415 /* ManagerError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManagerError.swift; sourceTree = "<group>"; };
+		F0C98AC62C19E8D30009A0E8 /* SOLID-Practice.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = "SOLID-Practice.docc"; sourceTree = "<group>"; };
 		F0FF54282B8E4D7700AF1F6D /* SqliteManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SqliteManager.swift; sourceTree = "<group>"; };
 		F0FF542A2B8E703F00AF1F6D /* RepositoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryProtocol.swift; sourceTree = "<group>"; };
 		F0FF542C2B8E709E00AF1F6D /* CoreDataRepositoryManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataRepositoryManager.swift; sourceTree = "<group>"; };
@@ -147,6 +149,7 @@
 				F03EA6852B8A904F00A6DC4C /* Info.plist */,
 				F03EA6802B8A904F00A6DC4C /* Assets.xcassets */,
 				F03EA6742B8A904E00A6DC4C /* AppDelegate.swift */,
+				F0C98AC62C19E8D30009A0E8 /* SOLID-Practice.docc */,
 			);
 			path = "SOLID-Practice";
 			sourceTree = "<group>";
@@ -411,6 +414,7 @@
 				F037749D2B90E29000D2DDD3 /* HomeDataProvider.swift in Sources */,
 				F03EA6922B8A925500A6DC4C /* NetworkService.swift in Sources */,
 				F0FF542B2B8E703F00AF1F6D /* RepositoryProtocol.swift in Sources */,
+				F0C98AC72C19E8D30009A0E8 /* SOLID-Practice.docc in Sources */,
 				F03EA6A92B8A9FF100A6DC4C /* FavoriteJokeTableViewCell.swift in Sources */,
 				F0FF543D2B8E777100AF1F6D /* HomeRepository.swift in Sources */,
 				F0FF542D2B8E709E00AF1F6D /* CoreDataRepositoryManager.swift in Sources */,
@@ -595,6 +599,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.caliskanzafer.SOLID-Practice";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				RUN_DOCUMENTATION_COMPILER = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -623,6 +628,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.caliskanzafer.SOLID-Practice";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				RUN_DOCUMENTATION_COMPILER = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
